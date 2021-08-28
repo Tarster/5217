@@ -47,9 +47,11 @@ class _ClockViewState extends State<ClockView> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            _clickableButton(),
-            SizedBox(width: 100,),
-            _clickableButton(),
+            _clickableButton(Icons.play_arrow),
+            SizedBox(
+              width: 100,
+            ),
+            _clickableButton(Icons.restore),
           ],
         )
       ],
@@ -67,7 +69,7 @@ class _ClockViewState extends State<ClockView> {
     );
   }
 
-  Widget _clickableButton() {
+  Widget _clickableButton(IconData icon) {
     return ClipOval(
       child: Material(
         color: Color(0xFFF17899), // Button color
@@ -78,7 +80,7 @@ class _ClockViewState extends State<ClockView> {
             width: 75,
             height: 75,
             child: Icon(
-              Icons.play_arrow,
+              icon,
               color: Colors.white,
               size: 40,
             ),
